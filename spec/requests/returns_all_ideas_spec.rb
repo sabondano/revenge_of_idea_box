@@ -9,7 +9,7 @@ RSpec.describe "view all ideas endpoint", type: :request do
                          body: "The body of idea #2 should be here",
                          quality: "genius")
 
-    get "/ideas", format: :json
+    get "/api/v1/ideas", format: :json
     body = JSON.parse(response.body, symbolize_names: true)
 
     expect(response).to              be_success
