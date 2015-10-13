@@ -12,7 +12,7 @@ RSpec.describe "view all ideas endpoint", type: :request do
     get "/api/v1/ideas", format: :json
     body = JSON.parse(response.body, symbolize_names: true)
 
-    expect(response).to              be_success
+    expect(response).to             be_success
     expect(response).to             have_http_status(200)
     expect(body.count).to           eq(2)
     expect(body.first[:title]).to   eq(idea_1.title)
