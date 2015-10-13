@@ -21,6 +21,20 @@ class Api::V1::IdeasController < ApplicationController
     render json: {}, status: :no_content
   end
 
+  def thumbs_up
+    @idea = Idea.find(params[:id])
+    @idea.thumbs_up
+
+    render json: @idea
+  end
+
+  def thumbs_down
+    @idea = Idea.find(params[:id])
+    @idea.thumbs_down
+
+    render json: @idea
+  end
+
   private
 
   def idea_params
