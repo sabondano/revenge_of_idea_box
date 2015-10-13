@@ -23,16 +23,14 @@ class Api::V1::IdeasController < ApplicationController
 
   def thumbs_up
     @idea = Idea.find(params[:id])
-    quality_integer = Idea.qualities[@idea.quality]
-    @idea.update(quality: quality_integer + 1) if quality_integer < 2
+    @idea.thumbs_up
 
     render json: @idea
   end
 
   def thumbs_down
     @idea = Idea.find(params[:id])
-    quality_integer = Idea.qualities[@idea.quality]
-    @idea.update(quality: quality_integer - 1) if quality_integer > 0
+    @idea.thumbs_down
 
     render json: @idea
   end
