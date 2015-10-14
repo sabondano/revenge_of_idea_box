@@ -1,6 +1,6 @@
 $(document).on('ready page:load', function() {
   $("#new-idea-form").on("ajax:success", function(event, data, status, xhr) {
-    $("#ideas").append(createDivElementFromIdea(data));
+    $("#ideas").prepend(createDivElementFromIdea(data));
     $("#idea_title").val("");
     $("#idea_body").val("");
     ideaCreatedNotice.call(this);
