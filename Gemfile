@@ -14,12 +14,11 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'bootstrap-sass'
 gem 'responders'
+gem 'lodash-rails'
 
 group :development, :test do
   gem 'byebug'
   gem 'pry'
-  gem 'rspec-rails'
-  gem 'capybara'
 end
 
 group :development do
@@ -31,5 +30,6 @@ group :test do
   gem 'rspec-rails'
   gem 'capybara'
   gem 'database_cleaner'
+  gem 'capybara-webkit'
 end
 

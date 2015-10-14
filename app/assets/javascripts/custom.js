@@ -10,7 +10,8 @@ function createIdeas(data) {
 
 function createDivElementFromIdea(idea) {
   var title    = $("<h4>", { text: idea.title });
-  var body     = $("<p>",  { text: idea.body });
+  var body     = $("<p>",  { text: _.trunc(idea.body,
+        { "length": 100, "separator": " "}) });
   var quality  = $("<p>",  { text: "quality: " + idea.quality });
   var thumbsUp = $("<span>", { class: "glyphicon glyphicon-thumbs-up",
     "aria-hidden": "true" });                               
