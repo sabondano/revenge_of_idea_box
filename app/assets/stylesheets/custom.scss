@@ -1,0 +1,51 @@
+body {
+  background-color: #f5f8fa;
+}
+
+.thumbnail {
+  background-color: #E5F2F7;
+}
+
+#new-idea-form {
+  padding-bottom: 40px;
+  .btn-save-idea {
+    margin-top: 5px;
+  }
+}
+
+.idea {
+  background-color: #fff;
+  padding-bottom: 25px;
+
+  .body {
+    color: #989898;
+  }
+
+  .quality-label {
+    font-size: 85%;
+  }
+
+  .btn-edit {
+    float: left;
+    margin-left: 5px;
+  }
+
+  .btn-delete {
+    float: left;
+  }
+
+  .glyphicon-thumbs-up {
+    cursor: pointer;
+    float: right;
+    margin-left: 5px;
+  }
+
+  .glyphicon-thumbs-down {
+    cursor: pointer;
+    float: right;
+  }
+}
+
+.btn-update-idea {
+  margin-top: 5px;
+}

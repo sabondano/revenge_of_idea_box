@@ -1,17 +1,27 @@
-<h1>Ideas</h1>
+<h1>Idea Box</h1>
 
-<%= label_tag :q, "search" %>
-<%= text_field_tag :q %>
+<div class="row">
+  <div class="col-sm-4">
+    <div class="thumbnail">
+      <%= label_tag :q, :search, class: "control-label" %>
+      <%= text_field_tag :q, "", class: "form-control" %>
+    </div>
 
-<%= form_tag api_v1_ideas_path, { id: "new-idea-form", remote: true } do %>
-  <%= label_tag :idea, :title %>
-  <%= text_field :idea, :title %>
+    <div class="thumbnail">
+      <%= form_tag api_v1_ideas_path, { id: "new-idea-form", remote: true } do %>
+        <%= label_tag :idea, :title, class: "control-label" %>
+        <%= text_field :idea, :title, class: "form-control" %>
 
-  <%= label_tag :idea, :body %>
-  <%= text_field :idea, :body %>
+        <%= label_tag :idea, :body, class: "control-label" %>
+        <%= text_field :idea, :body, class: "form-control" %>
 
-  <%= submit_tag "Save" %>
-<% end %>
+        <%= submit_tag "Save", class: "btn btn-default btn-save-idea pull-right" %>
+      <% end %>
+    </div>
+  </div>
 
-<div id="ideas">
+  <div class="col-sm-4">
+    <div id="ideas">
+    </div>
+  </div>
 </div>
