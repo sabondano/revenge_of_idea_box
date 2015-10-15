@@ -7,5 +7,7 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :ideas, only: [:edit, :update]
+
   root 'welcome#index'
 end

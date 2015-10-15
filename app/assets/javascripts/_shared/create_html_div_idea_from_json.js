@@ -5,7 +5,8 @@ function createDivElementFromIdea(idea) {
     .append(createQuality(idea))
     .append(createThumbsUp())
     .append(createThumbsDown())
-    .append(createDeleteButton());
+    .append(createDeleteButton())
+    .append(createEditButton(idea));
 }
 
 function createTitle(idea) {
@@ -36,4 +37,10 @@ function createDeleteButton() {
   return $("<button>", { class: "btn btn-default btn-xs btn-delete",
     "type": "submit",
     "text": "delete" });
+}
+
+function createEditButton(idea) {
+  return $("<a>", { class: "btn btn-default btn-xs btn-edit",
+    "href": "/ideas/" + idea.id + "/edit",
+    "text": "edit" });
 }
