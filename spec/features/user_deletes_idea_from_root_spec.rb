@@ -9,6 +9,7 @@ feature 'user deletes idea from root', js: true do
                          quality: "genius")
     visit root_path
 
+    Capybara.default_wait_time
     first(".btn-delete").click
 
     expect(page).to_not have_content("This is idea #2")

@@ -18,7 +18,8 @@ function createBody(idea) {
 }
 
 function createQuality(idea) {
-  return $("<p>", { text: "quality: " + idea.quality });
+  return $("<p>", { text: "quality: " + idea.quality,
+    "class": "quality-label" });
 }
 
 function createThumbsUp() {
