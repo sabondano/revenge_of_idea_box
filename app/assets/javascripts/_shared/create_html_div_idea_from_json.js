@@ -10,12 +10,13 @@ function createDivElementFromIdea(idea) {
 }
 
 function createTitle(idea) {
-  return $("<h4>", { text: idea.title });
+  return $("<h4>", { text: idea.title, "class": "title" });
 }
 
 function createBody(idea) {
   return $("<p>", { text: _.trunc(idea.body,
-        { "length": 100, "separator": " "}) });
+        { "length": 100, "separator": " "}),
+        "class": "body" });
 }
 
 function createQuality(idea) {
