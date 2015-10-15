@@ -5,9 +5,12 @@ $(document).on('ready page:load', function() {
 function searchIdeas() {
   $("#q").on('keyup', function() {
     $( ".idea" ).children(".title").each( function( index, element ){
-      if ( ($(this).text().toLowerCase().indexOf($("#q").val().toLowerCase()) >= 0) || ( $(this).siblings(".body").text().toLowerCase().indexOf($("#q").val().toLowerCase()) >= 0 ) ) {
+      var findMatchForTitle = $(this).text().toLowerCase().indexOf($("#q").val().toLowerCase());
+      var findMatchForBody = $(this).siblings(".body").text().toLowerCase().indexOf($("#q").val().toLowerCase());
+
+      if ( ( findMatchForTitle >= 0 ) || ( findMatchForBody >= 0 ) ) {
         $(this).closest(".idea").show();
-      } else if ( ($(this).text().toLowerCase().indexOf($("#q").val().toLowerCase()) == -1) || ($(this).siblings(".body").text().toLowerCase().indexOf($("#q").val().toLowerCase()) == -1) ) {
+      } else if ( (findMatchForTitle == -1) || ( findMatchForBody == -1) ) {
         $(this).closest(".idea").hide();
       }
     });
