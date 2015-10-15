@@ -1,5 +1,8 @@
 <h1>Ideas</h1>
 
+<%= label_tag :q, "search" %>
+<%= text_field_tag :q %>
+
 <%= form_tag api_v1_ideas_path, { id: "new-idea-form", remote: true } do %>
   <%= label_tag :idea, :title %>
   <%= text_field :idea, :title %>
