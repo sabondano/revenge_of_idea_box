@@ -1,10 +1,11 @@
 function createDivElementFromIdea(idea) {
-  return $("<div>", { "data-idea-id": idea.id })
+  return $("<div>", { "class": "idea", "data-idea-id": idea.id })
     .append(createTitle(idea))
     .append(createBody(idea))
     .append(createQuality(idea))
     .append(createThumbsUp())
-    .append(createThumbsDown());
+    .append(createThumbsDown())
+    .append(createDeleteButton());
 }
 
 function createTitle(idea) {
@@ -28,4 +29,10 @@ function createThumbsUp() {
 function createThumbsDown() {
   return $("<span>", { class: "glyphicon glyphicon-thumbs-down",
     "aria-hidden": "true" });                               
+}
+
+function createDeleteButton() {
+  return $("<button>", { class: "btn btn-default btn-xs btn-delete",
+    "type": "submit",
+    "text": "delete" });
 }
